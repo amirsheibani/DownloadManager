@@ -26,7 +26,10 @@ void main() async{
   [DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight]
   ).then((_) async {
     var path =  await getApplicationDocumentsDirectory();
+
+
     Hive.init(path.path);
+
     Hive.registerAdapter(ObjectStorageAdapter());
     Hive.registerAdapter(ObjectStorageTypeAdapter());
     Hive.registerAdapter(ObjectDownloadStateAdapter());
