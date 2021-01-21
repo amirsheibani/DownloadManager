@@ -18,7 +18,6 @@ import 'package:path_provider/path_provider.dart';
 
 import 'global.dart';
 
-
 void main() async{
   HttpOverrides.global = new MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +27,6 @@ void main() async{
   ).then((_) async {
     var path =  await getApplicationDocumentsDirectory();
     Hive.init(path.path);
-
     Hive.registerAdapter(ObjectStorageAdapter());
     Hive.registerAdapter(ObjectStorageTypeAdapter());
     Hive.registerAdapter(ObjectDownloadStateAdapter());
